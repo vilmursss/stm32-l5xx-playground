@@ -12,7 +12,7 @@ int main(void) {
     static const uint8_t pin_f = 11;
 
     // Configure PF11 as output
-    if (!gpiof_configure_pin_as_output(pin_f))
+    if (!gpiof_configure_pin_output(pin_f))
     {
         // TODO: Handle error
         while (1);

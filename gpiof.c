@@ -29,7 +29,7 @@ void gpiof_enable_clock()
     RCC_AHB2ENR |= (1 << 5);  // Enable clock for GPIOF
 }
 
-bool gpiof_configure_pin_as_output(const uint8_t pin)
+bool gpiof_configure_pin_output(const uint8_t pin)
 {
     if (!valid_pin(pin))
     {

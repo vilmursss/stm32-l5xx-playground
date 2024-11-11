@@ -20,7 +20,7 @@ void gpiof_enable_clock(void);
  * @param pin The pin number to configure as output (0-15).
  * @return True on success, False otherwise.
  */
-bool gpiof_configure_pin_as_output(uint8_t pin);
+bool gpiof_configure_pin_output(uint8_t pin);
 
 /**
  * @brief Sets a specified pin on GPIO port F to high.
