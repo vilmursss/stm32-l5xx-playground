@@ -15,6 +15,24 @@ SRCS = $(shell find . -name '*.c') $(shell find . -name '*.s')
 OBJS = $(SRCS:.c=.o)
 OBJS := $(OBJS:.s=.o)
 
+info:
+	@echo "Available targets:"
+	@echo ""
+	@echo "build:"
+	@echo "  This target builds the project."
+	@echo "  It compiles all source files and links them into an executable."
+	@echo ""
+	@echo "flash:"
+	@echo "  This target is for flashing the ELF file to the device."
+	@echo ""
+	@echo "clean:"
+	@echo "  This target removes all object files, the ELF file, and the binary file."
+	@echo ""
+	@echo "all:"
+	@echo "  This target calls all other targets in the following order: clean, build, flash."
+
+all: clean build flash
+
 build: $(TARGET).elf
 	$(OBJCOPY) -O binary $(TARGET).elf $(TARGET).bin
 
