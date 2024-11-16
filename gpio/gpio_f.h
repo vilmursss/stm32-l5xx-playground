@@ -1,5 +1,5 @@
-#ifndef GPIO_H
-#define GPIO_H
+#ifndef GPIO_GPIO_F_H
+#define GPIO_GPIO_F_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -44,4 +44,4 @@ bool gpiof_set_pin_high(uint8_t pin);
  */
 bool gpiof_set_pin_low(uint8_t pin);
 
-#endif // GPIO_H
+#endif // GPIO_GPIO_F_H

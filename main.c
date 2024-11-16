@@ -1,6 +1,6 @@
-#include "delay.h"
-#include "gpiof.h"
-#include "system_clock.h"
+#include "utils/delay.h"
+#include "gpio/gpio_f.h"
+#include "clock/system_clock.h"
 
 int main(void)
 {

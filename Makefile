@@ -4,12 +4,12 @@ CC = arm-none-eabi-gcc
 OBJCOPY = arm-none-eabi-objcopy
 
 CFLAGS = -mcpu=cortex-m33 -mthumb -g -O0 -Wall
-LDFLAGS = -T linker.ld -Wl,--gc-sections -nostartfiles
+LDFLAGS = -T startup/linker.ld -Wl,--gc-sections -nostartfiles
 
 STFLASH = st-flash
 
-# Source files
-SRCS = startup.s main.c gpiof.c delay.c system_clock.c
+# Find all .c and .s files in the project directories
+SRCS = $(shell find . -name '*.c') $(shell find . -name '*.s')
 
 # Object files
 OBJS = $(SRCS:.c=.o)

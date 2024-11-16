@@ -1,5 +1,5 @@
-#ifndef DELAY_H
-#define DELAY_H
+#ifndef UTILS_DELAY_H
+#define UTILS_DELAY_H
 
 #include <stdint.h>
 
@@ -17,4 +17,4 @@ void delay_set_clock_frequency(uint32_t frequency_hz);
  */
 void delay_ms(uint32_t ms);
 
-#endif // DELAY_H
+#endif // UTILS_DELAY_H
