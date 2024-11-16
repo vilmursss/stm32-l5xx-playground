@@ -11,7 +11,7 @@ void delay_set_clock_frequency(const uint32_t frequency_hz)
 void delay_ms(const uint32_t ms)
 {
     // Calculate the number of cycles needed for the specified delay in milliseconds
-    uint32_t cycles = (clock_frequency_hz / 1000) * ms / 4;
+    uint32_t cycles = (clock_frequency_hz / 1000) * ms / 50;
 
     while (cycles--)
     {
