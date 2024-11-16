@@ -9,7 +9,7 @@ LDFLAGS = -T linker.ld -Wl,--gc-sections -nostartfiles
 STFLASH = st-flash
 
 # Source files
-SRCS = startup.s main.c gpiof.c delay.c
+SRCS = startup.s main.c gpiof.c delay.c system_clock.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
