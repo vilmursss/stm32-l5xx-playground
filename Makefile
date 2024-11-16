@@ -13,6 +13,7 @@ SRCS = $(shell find . -name '*.c') $(shell find . -name '*.s')
 
 # Object files
 OBJS = $(SRCS:.c=.o)
+OBJS := $(OBJS:.s=.o)
 
 build: $(TARGET).elf
 	$(OBJCOPY) -O binary $(TARGET).elf $(TARGET).bin
@@ -31,4 +32,4 @@ flash: $(TARGET).bin
 	$(STFLASH) write $< 0x08000000
 
 clean:
-	rm -f *.o $(TARGET).elf $(TARGET).bin
+	rm -f $(OBJS) $(TARGET).elf $(TARGET).bin
