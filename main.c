@@ -1,6 +1,8 @@
 #include "utils/delay.h"
+#include "gpio/gpio_c.h"
 #include "gpio/gpio_f.h"
 #include "clock/system_clock.h"
+#include "serial/usart3.h"
 
 int main(void)
 {
@@ -10,8 +12,14 @@ int main(void)
     // Set to 16 MHz
     delay_set_clock_frequency(16000000);
 
+    // Enable the GPIOC clock
+    gpioc_enable_clock();
+
     // Enable the GPIOF clock
     gpiof_enable_clock();
+
+    // Initialize USART3
+    usart3_init();
 
     static const uint8_t pin_f = 11;
 
@@ -30,9 +38,15 @@ int main(void)
             // TODO: Handle error
             while (3);
         }
+        usart3_send_char('H');
+        usart3_send_char('e');
+        usart3_send_char('l');
+        usart3_send_char('l');
+        usart3_send_char('o');
+        usart3_send_char('\r');
+        usart3_send_char('\n');
 
         delay_ms(500);
-
         // Set PF11 low
         if (!gpiof_set_pin_low(pin_f))
         {
